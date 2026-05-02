@@ -1,45 +1,315 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Logo from '../components/Logo.astro';
 import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout>
-  <main class="placeholder">
-    <div class="container-page">
-      <Logo variant="mark" size={64} />
+  <Nav />
+
+  <header class="hero">
+    <div class="container-page hero-inner">
       <p class="eyebrow">AI Coaching &amp; Execution</p>
       <h1>Judgment <em>over tooling.</em></h1>
       <p class="lead">
-        Site under construction. Brand foundation in place — sections coming
-        next.
+        An AI advisory practice for operator-led companies. Judgment from the
+        outside, hands when you need them. No tool-of-the-month.
       </p>
-      <div class="actions">
-        <Button href="/brand">View brand template <span>→</span></Button>
+      <div class="hero-actions">
+        <Button href="#book">Book an intro <span>→</span></Button>
+        <Button href="#how" variant="ghost">How it works</Button>
       </div>
     </div>
-  </main>
+  </header>
+
+  <Section id="thesis" eyebrow="The thesis" number="01">
+    <h2>Most AI consulting is being done by people who&apos;ve never owned a P&amp;L.</h2>
+    <div class="prose">
+      <p>
+        The capability gap isn&apos;t tooling. It&apos;s judgment. The companies
+        getting hurt aren&apos;t the ones using ChatGPT — they&apos;re the ones
+        being sold an AI strategy by people who&apos;ve never had to make
+        payroll.
+      </p>
+      <p>
+        We&apos;ve built and run operator-led businesses. We&apos;ve also
+        shipped AI in production for companies you&apos;ve heard of. Both
+        matter. Either alone is dangerous.
+      </p>
+      <p>
+        ACE is the practice we wish existed when we were the operator: judgment
+        from the outside, hands when you need them, and a refusal to
+        recommend the tool of the month.
+      </p>
+    </div>
+  </Section>
+
+  <Section id="how" eyebrow="How we plug in" number="02">
+    <h2>Three modes. One client at a time.</h2>
+    <p class="lead mb-lead">
+      Pick the engagement that matches the question. Move between modes as the
+      work evolves — most clients do.
+    </p>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-head">
+          <span class="card-tag">Mode A</span>
+          <h3>Advisory</h3>
+        </div>
+        <p class="card-body">
+          Working sessions with the operator. We cut through the noise,
+          right-size ambition, and make the next 30 days legible. You leave
+          each session with a decision, not a deck.
+        </p>
+        <ul class="card-list">
+          <li>2 working sessions / month</li>
+          <li>Async between sessions</li>
+          <li>90-day minimum</li>
+        </ul>
+      </article>
+
+      <article class="card card--featured">
+        <div class="card-head">
+          <span class="card-tag">Mode B</span>
+          <h3>Pairing</h3>
+        </div>
+        <p class="card-body">
+          Embedded with your team for a defined window. We pair on the actual
+          implementation — not over the implementation. Most of our clients
+          start here.
+        </p>
+        <ul class="card-list">
+          <li>1–2 days / week, on-site or remote</li>
+          <li>Direct work in your tools</li>
+          <li>Quarterly minimum</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <span class="card-tag">Mode C</span>
+          <h3>Build</h3>
+        </div>
+        <p class="card-body">
+          Project-priced delivery for a scoped piece of work. We scope, build,
+          and hand off — with a written runbook so your team can run it.
+        </p>
+        <ul class="card-list">
+          <li>Fixed scope &amp; window</li>
+          <li>Statement of work up front</li>
+          <li>Hand-off included</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section id="filter" eyebrow="Is this for you?" number="03">
+    <h2>We&apos;re not for everyone. That&apos;s the point.</h2>
+    <div class="filter-grid">
+      <div class="filter-col filter-col--yes">
+        <span class="filter-tag">This is for you if</span>
+        <ul>
+          <li>You run an operator-led business between $5M and $250M.</li>
+          <li>
+            You&apos;ve felt the gap between AI capability and AI judgment.
+          </li>
+          <li>You want a thinking partner, not a vendor pitch deck.</li>
+          <li>You can move on a 30-day decision cycle.</li>
+          <li>You&apos;re willing to kill an idea when the math says so.</li>
+        </ul>
+      </div>
+      <div class="filter-col filter-col--no">
+        <span class="filter-tag">This isn&apos;t for you if</span>
+        <ul>
+          <li>You want a 60-page strategy doc to file away.</li>
+          <li>You&apos;re looking for the cheapest-bid implementation.</li>
+          <li>You want us to be the only voice in the room.</li>
+          <li>You&apos;re optimizing for headline announcements.</li>
+          <li>You think AI is a procurement problem.</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="tiers" eyebrow="Tiers" number="04">
+    <h2>Pricing that matches the work.</h2>
+    <p class="lead mb-lead">
+      Transparent floors. Custom ceilings. We turn down work we can&apos;t do
+      well.
+    </p>
+    <div class="tiers">
+      <article class="tier">
+        <header class="tier-head">
+          <span class="card-tag">Mode A</span>
+          <h3>Advisory</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">From</span>
+          <span class="tier-price-num">$[X],000</span>
+          <span class="tier-price-unit">/ month</span>
+        </div>
+        <ul class="tier-list">
+          <li>2 working sessions monthly</li>
+          <li>Slack &amp; email between sessions</li>
+          <li>One operator, one advisor</li>
+          <li>90-day minimum</li>
+        </ul>
+        <Button href="#book" variant="ghost">Talk it through →</Button>
+      </article>
+
+      <article class="tier tier--featured">
+        <header class="tier-head">
+          <span class="card-tag">Mode B</span>
+          <h3>Pairing</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">From</span>
+          <span class="tier-price-num">$[XX],000</span>
+          <span class="tier-price-unit">/ month</span>
+        </div>
+        <ul class="tier-list">
+          <li>1–2 days weekly, embedded</li>
+          <li>Direct work in your stack</li>
+          <li>Weekly written status</li>
+          <li>Quarterly minimum</li>
+        </ul>
+        <Button href="#book">Book an intro →</Button>
+      </article>
+
+      <article class="tier">
+        <header class="tier-head">
+          <span class="card-tag">Mode C</span>
+          <h3>Build</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">Project priced</span>
+          <span class="tier-price-num">$[XX]–[XXX]k</span>
+          <span class="tier-price-unit">/ engagement</span>
+        </div>
+        <ul class="tier-list">
+          <li>Scoped statement of work</li>
+          <li>Fixed delivery window</li>
+          <li>Runbook &amp; hand-off included</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <Button href="#book" variant="ghost">Scope a project →</Button>
+      </article>
+    </div>
+  </Section>
+
+  <Section id="who" eyebrow="Who it's for" number="05">
+    <h2>Operator-led companies between $5M and $250M.</h2>
+    <p class="lead mb-lead">
+      You&apos;ve grown past the founder-as-everything stage. You haven&apos;t
+      grown into the layer of process that lets AI initiatives die in
+      committee. That window is where the leverage is.
+    </p>
+    <div class="who-grid">
+      <article class="who-card">
+        <span class="who-tag">Profile 01</span>
+        <h3>The CEO who keeps closing tabs.</h3>
+        <p>
+          Eight tools open, three vendor pitches in the inbox, no clear next
+          step. We make the next 30 days legible — and kill the bets that
+          don&apos;t earn the time.
+        </p>
+      </article>
+      <article class="who-card">
+        <span class="who-tag">Profile 02</span>
+        <h3>The COO running on instinct.</h3>
+        <p>
+          The team is asking for AI tools faster than you can evaluate them.
+          We pair on the highest-leverage 2 — and write a one-pager you can
+          hand back to anyone else asking.
+        </p>
+      </article>
+      <article class="who-card">
+        <span class="who-tag">Profile 03</span>
+        <h3>The founder who&apos;s been burned.</h3>
+        <p>
+          You&apos;ve hired AI consultants before. You got a deck and a
+          number. We work in your tools, ship something running, and write
+          the runbook so your team can keep it alive.
+        </p>
+      </article>
+    </div>
+    <p class="who-note">
+      <span class="eyebrow">Note</span>
+      Logos &amp; named case studies on request — we don&apos;t list active
+      clients publicly. <a href="#book">Ask in an intro.</a>
+    </p>
+  </Section>
+
+  <Section id="about" eyebrow="About" number="06">
+    <h2>Built by operators, not by consultants.</h2>
+    <div class="about-grid">
+      <div class="prose">
+        <p>
+          [PLACEHOLDER — founder bio, ~100 words. Cover: prior operator role,
+          P&amp;L scale owned, AI-in-production credibility, and why ACE
+          exists.]
+        </p>
+        <p>
+          [PLACEHOLDER — second paragraph, ~80 words. Cover: how the practice
+          works, who&apos;s on the bench, why we stay small on purpose.]
+        </p>
+        <p>
+          ACE is held to one rule: we recommend the work we&apos;d do if we
+          were back in your seat. Anything else is a vendor.
+        </p>
+      </div>
+      <aside class="about-side">
+        <div class="about-stat">
+          <span class="about-stat-num">$[X]B+</span>
+          <span class="about-stat-label">Operator P&amp;L owned</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">[X] yrs</span>
+          <span class="about-stat-label">Shipping AI in production</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">[X]</span>
+          <span class="about-stat-label">Active clients at a time</span>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  <Section id="book" eyebrow="Book" number="07" divider={false}>
+    <div class="cta">
+      <h2>Let&apos;s see if we fit.</h2>
+      <p class="lead">
+        30 minutes. No deck. We&apos;ll tell you within the call whether
+        we&apos;re the right call — or who is.
+      </p>
+      <div class="cta-actions">
+        <Button href="mailto:hello@ace.example?subject=Intro%20call">
+          Book the intro <span>→</span>
+        </Button>
+        <Button href="mailto:hello@ace.example" variant="ghost">
+          Or just email us
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <Footer />
 </BaseLayout>
 
 <style>
-  .placeholder {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-block: 120px;
+  /* Hero ---------------------------------------------------------- */
+  .hero {
+    padding-block: 120px 100px;
   }
 
-  .placeholder .eyebrow {
-    margin-block: 32px 24px;
+  .hero-inner {
+    max-width: 980px;
   }
 
-  h1 {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(54px, 9vw, 132px);
-    line-height: 0.88;
-    letter-spacing: -0.045em;
-    margin-bottom: 32px;
+  .hero .eyebrow {
+    margin-bottom: 24px;
   }
 
   h1 em {
@@ -48,20 +318,449 @@ import Button from '../components/Button.astro';
     color: var(--color-foreground-dim);
   }
 
-  .lead {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 1.5;
-    color: var(--color-foreground-dim);
-    max-width: 620px;
+  .hero .lead {
+    margin-top: 32px;
     margin-bottom: 40px;
+    max-width: 620px;
   }
 
-  .actions {
+  .hero-actions {
     display: flex;
     gap: 16px;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-block: 64px 56px;
+    }
+  }
+
+  /* Shared --------------------------------------------------------- */
+  .mb-lead {
+    margin-bottom: 56px;
+  }
+
+  /* Cards (How we plug in) ---------------------------------------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card--featured {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border-color: var(--color-ink);
+  }
+
+  .card--featured h3,
+  .card--featured .card-tag {
+    color: var(--color-paper);
+  }
+
+  .card--featured .card-body,
+  .card--featured .card-list li {
+    color: rgb(250 250 247 / 0.78);
+  }
+
+  .card--featured .card-list li::before {
+    background: rgb(250 250 247 / 0.5);
+  }
+
+  .card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .card h3 {
+    margin-bottom: 0;
+  }
+
+  .card-body {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--color-foreground-soft);
+  }
+
+  .card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+  }
+
+  .card--featured .card-list {
+    border-color: rgb(250 250 247 / 0.18);
+  }
+
+  .card-list li {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--color-foreground-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--color-foreground-dim);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Filter --------------------------------------------------------- */
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 32px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .filter-col {
+    padding: 40px 36px;
+  }
+
+  .filter-col--yes {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .filter-col--no {
+    background: var(--color-surface);
+  }
+
+  .filter-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-dim);
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .filter-col--no .filter-tag {
+    color: var(--color-foreground-muted);
+  }
+
+  .filter-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .filter-col li {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--color-foreground-soft);
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .filter-col--yes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 12px;
+    height: 1px;
+    background: var(--color-foreground);
+  }
+
+  .filter-col--no li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-foreground-muted);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* Tiers ---------------------------------------------------------- */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .tier {
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .tier--featured {
+    border-color: var(--color-foreground);
+    border-width: 1.5px;
+    box-shadow: 0 16px 40px -24px rgb(10 10 10 / 0.18);
+  }
+
+  .tier-head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tier h3 {
+    margin: 0;
+  }
+
+  .tier-price {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .tier-price-from {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+    width: 100%;
+  }
+
+  .tier-price-num {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+    line-height: 1;
+  }
+
+  .tier-price-unit {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-foreground-dim);
+  }
+
+  .tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .tier-list li {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-foreground-soft);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .tier-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 1px;
+    background: var(--color-foreground-dim);
+  }
+
+  /* Who ------------------------------------------------------------ */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .who-card {
+    border-top: 2px solid var(--color-foreground);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .who-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .who-card h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .who-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-foreground-soft);
+  }
+
+  .who-note {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-foreground-dim);
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .who-note a {
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* About ---------------------------------------------------------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-left: 1px solid var(--color-border);
+    padding-left: 32px;
+  }
+
+  .about-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .about-stat-num {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+    line-height: 1;
+  }
+
+  .about-stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-dim);
+  }
+
+  /* CTA ------------------------------------------------------------ */
+  .cta {
+    text-align: center;
+    max-width: 720px;
+    margin: 32px auto 0;
+  }
+
+  .cta .lead {
+    margin-inline: auto;
+    margin-block: 24px 40px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive ----------------------------------------------------- */
+  @media (max-width: 880px) {
+    .card-grid,
+    .tiers,
+    .who-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-col--yes {
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-side {
+      border-left: none;
+      border-top: 1px solid var(--color-border);
+      padding-left: 0;
+      padding-top: 32px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .about-stat {
+      flex: 1 1 140px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .filter-col {
+      padding: 32px 24px;
+    }
+    .tier-price-num,
+    .about-stat-num {
+      font-size: 32px;
+    }
   }
 </style>

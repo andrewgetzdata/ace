@@ -1,0 +1,78 @@
+---
+import Logo from './Logo.astro';
+import Button from './Button.astro';
+
+interface Props {
+  active?: string;
+}
+
+const links = [
+  { href: '/#thesis', label: 'Thesis' },
+  { href: '/#how', label: 'How we plug in' },
+  { href: '/#tiers', label: 'Tiers' },
+  { href: '/#who', label: "Who it's for" },
+  { href: '/#about', label: 'About' },
+];
+---
+
+<header class="nav">
+  <div class="container-page nav-row">
+    <Logo variant="full" />
+    <nav class="nav-links" aria-label="Primary">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <Button href="/#book" class="nav-cta">Book intro <span>→</span></Button>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgb(250 250 247 / 0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-block: 18px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-foreground);
+  }
+
+  @media (max-width: 880px) {
+    .nav-links {
+      display: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .nav-cta {
+      display: none;
+    }
+  }
+</style>
