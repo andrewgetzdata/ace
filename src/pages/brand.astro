@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
+
+const swatches = [
+  { name: 'ink', token: '--color-ink', value: '#0c0d10' },
+  { name: 'ink-soft', token: '--color-ink-soft', value: '#15161b' },
+  { name: 'ink-card', token: '--color-ink-card', value: '#1a1b21' },
+  { name: 'paper', token: '--color-paper', value: '#ebe5d9' },
+  { name: 'rust', token: '--color-rust', value: '#d94e1f' },
+  { name: 'gold', token: '--color-gold', value: '#c4a24a' },
+  { name: 'moss', token: '--color-moss', value: '#7fa878' },
+];
+---
+
+<BaseLayout title="ACE — Brand">
+  <Section id="logo" eyebrow="Logo" number="01">
+    <h2>Mark &amp; wordmark</h2>
+    <div class="grid">
+      <div class="tile">
+        <Logo variant="full" />
+        <p class="caption">Full lockup · default size</p>
+      </div>
+      <div class="tile">
+        <Logo variant="mark" size={48} />
+        <p class="caption">Mark only · 48px</p>
+      </div>
+      <div class="tile">
+        <Logo variant="mark" size={96} />
+        <p class="caption">Mark only · 96px</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="palette" eyebrow="Palette" number="02">
+    <h2>Color tokens</h2>
+    <p class="lead">
+      Defined once in <code>src/styles/tokens.css</code>. Swap them there to
+      reskin the entire site.
+    </p>
+    <div class="swatches">
+      {
+        swatches.map((s) => (
+          <div class="swatch">
+            <div
+              class="swatch-chip"
+              style={`background: var(${s.token});`}
+            />
+            <div class="swatch-meta">
+              <div class="swatch-name">{s.name}</div>
+              <div class="swatch-value">{s.value}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section id="type" eyebrow="Typography" number="03">
+    <h2>Type scale</h2>
+    <div class="type-stack">
+      <div class="type-row">
+        <span class="type-tag">Display · Fraunces 900</span>
+        <h1 class="display">Judgment <em>over tooling.</em></h1>
+      </div>
+      <div class="type-row">
+        <span class="type-tag">H2 · Fraunces 600</span>
+        <h2>We slot into the system you already run.</h2>
+      </div>
+      <div class="type-row">
+        <span class="type-tag">Lead · Fraunces 300</span>
+        <p class="lead">
+          An AI advisory practice for operator-led companies. Judgment from the
+          outside, hands when you need them.
+        </p>
+      </div>
+      <div class="type-row">
+        <span class="type-tag">Body · Fraunces 400</span>
+        <p>
+          Most AI consulting is being done by people who've never owned a P&amp;L.
+          The gap between AI capability and AI judgment is where small and
+          mid-sized businesses get hurt.
+        </p>
+      </div>
+      <div class="type-row">
+        <span class="type-tag">Eyebrow · JetBrains Mono</span>
+        <p class="eyebrow">AI Coaching &amp; Execution</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="buttons" eyebrow="Buttons" number="04">
+    <h2>Actions</h2>
+    <div class="row">
+      <Button href="#">Book an intro <span>→</span></Button>
+      <Button href="#" variant="ghost">How it works</Button>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  h1.display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(54px, 9vw, 120px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+  }
+
+  h1.display em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-accent);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+
+  .lead {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-foreground-dim);
+    max-width: 760px;
+    margin-bottom: 40px;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-accent);
+    background: var(--color-surface);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .tile {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 180px;
+  }
+
+  .caption {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .swatch {
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .swatch-chip {
+    aspect-ratio: 4 / 3;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .swatch-meta {
+    padding: 14px 16px;
+    background: var(--color-surface);
+  }
+
+  .swatch-name {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--color-foreground);
+    margin-bottom: 4px;
+  }
+
+  .swatch-value {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-foreground-muted);
+  }
+
+  .type-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 32px;
+  }
+
+  .type-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 32px;
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  .type-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout>
+  <main class="placeholder">
+    <div class="container-page">
+      <Logo variant="mark" size={64} />
+      <p class="eyebrow">AI Coaching &amp; Execution</p>
+      <h1>Judgment <em>over tooling.</em></h1>
+      <p class="lead">
+        Site under construction. Brand foundation in place — sections coming
+        next.
+      </p>
+      <div class="actions">
+        <Button href="/brand">View brand template <span>→</span></Button>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .placeholder {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-block: 120px;
+  }
+
+  .placeholder .eyebrow {
+    margin-block: 32px 24px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(54px, 9vw, 132px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-accent);
+  }
+
+  .lead {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-foreground-dim);
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+</style>

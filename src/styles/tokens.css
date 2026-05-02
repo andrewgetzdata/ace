@@ -1,0 +1,53 @@
+/*
+ * Design tokens — single source of truth for the ACE brand.
+ * Edit colors, type, spacing, radii here. Tailwind v4 picks these up
+ * automatically as utilities (bg-ink, text-paper, font-mono, etc.).
+ */
+
+@theme {
+  /* === Brand palette ============================================ */
+  --color-ink: #0c0d10;
+  --color-ink-soft: #15161b;
+  --color-ink-card: #1a1b21;
+
+  --color-paper: #ebe5d9;
+  --color-paper-dim: rgb(235 229 217 / 0.65);
+  --color-paper-muted: rgb(235 229 217 / 0.4);
+
+  --color-rust: #d94e1f;
+  --color-rust-soft: rgb(217 78 31 / 0.12);
+  --color-gold: #c4a24a;
+  --color-moss: #7fa878;
+
+  --color-line: rgb(235 229 217 / 0.12);
+  --color-line-bright: rgb(235 229 217 / 0.25);
+
+  /* === Semantic aliases ========================================= */
+  --color-background: var(--color-ink);
+  --color-surface: var(--color-ink-soft);
+  --color-surface-raised: var(--color-ink-card);
+  --color-foreground: var(--color-paper);
+  --color-foreground-dim: var(--color-paper-dim);
+  --color-foreground-muted: var(--color-paper-muted);
+  --color-accent: var(--color-rust);
+  --color-accent-soft: var(--color-rust-soft);
+  --color-border: var(--color-line);
+  --color-border-strong: var(--color-line-bright);
+
+  /* === Typography =============================================== */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Fraunces', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Eyebrow / label style — used as a class via .eyebrow */
+  --tracking-eyebrow: 0.2em;
+
+  /* === Radii ==================================================== */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 9999px;
+
+  /* === Layout =================================================== */
+  --container-max: 1240px;
+}
