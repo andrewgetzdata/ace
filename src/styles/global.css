@@ -9,17 +9,26 @@ html {
 
 body {
   background: var(--color-background);
-  color: var(--color-foreground);
+  color: var(--color-foreground-soft);
   font-family: var(--font-body);
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-::selection {
-  background: var(--color-accent);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-foreground);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 /* Reusable primitives -------------------------------------------- */
@@ -28,7 +37,7 @@ body {
   font-size: 11px;
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-foreground-dim);
 }
 
 .container-page {

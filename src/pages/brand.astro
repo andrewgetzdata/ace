@@ -5,13 +5,14 @@ import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
 
 const swatches = [
-  { name: 'ink', token: '--color-ink', value: '#0c0d10' },
-  { name: 'ink-soft', token: '--color-ink-soft', value: '#15161b' },
-  { name: 'ink-card', token: '--color-ink-card', value: '#1a1b21' },
-  { name: 'paper', token: '--color-paper', value: '#ebe5d9' },
-  { name: 'rust', token: '--color-rust', value: '#d94e1f' },
-  { name: 'gold', token: '--color-gold', value: '#c4a24a' },
-  { name: 'moss', token: '--color-moss', value: '#7fa878' },
+  { name: 'ink', token: '--color-ink', value: '#0a0a0a' },
+  { name: 'ink-soft', token: '--color-ink-soft', value: '#1f1f1e' },
+  { name: 'ink-muted', token: '--color-ink-muted', value: '#6b6a65' },
+  { name: 'ink-faint', token: '--color-ink-faint', value: '#a8a6a0' },
+  { name: 'paper', token: '--color-paper', value: '#fafaf7' },
+  { name: 'paper-soft', token: '--color-paper-soft', value: '#f2f1ec' },
+  { name: 'paper-raised', token: '--color-paper-raised', value: '#e8e6df' },
+  { name: 'line', token: '--color-line', value: '#e0ded7' },
 ];
 ---
 
@@ -112,7 +113,7 @@ const swatches = [
   h1.display em {
     font-style: italic;
     font-weight: 300;
-    color: var(--color-accent);
+    color: var(--color-foreground-dim);
   }
 
   h2 {

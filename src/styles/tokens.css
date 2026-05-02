@@ -2,41 +2,42 @@
  * Design tokens — single source of truth for the ACE brand.
  * Edit colors, type, spacing, radii here. Tailwind v4 picks these up
  * automatically as utilities (bg-ink, text-paper, font-mono, etc.).
+ *
+ * Palette: warm mono. Paper-white background, rich-black ink, neutral
+ * grays. Accent = ink (no color). Texture comes from typography and
+ * whitespace, not hue.
  */
 
 @theme {
-  /* === Brand palette ============================================ */
-  --color-ink: #0c0d10;
-  --color-ink-soft: #15161b;
-  --color-ink-card: #1a1b21;
+  /* === Brand palette (warm mono) ================================ */
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1f1f1e;
+  --color-ink-muted: #6b6a65;
+  --color-ink-faint: #a8a6a0;
 
-  --color-paper: #ebe5d9;
-  --color-paper-dim: rgb(235 229 217 / 0.65);
-  --color-paper-muted: rgb(235 229 217 / 0.4);
+  --color-paper: #fafaf7;
+  --color-paper-soft: #f2f1ec;
+  --color-paper-raised: #e8e6df;
 
-  --color-rust: #d94e1f;
-  --color-rust-soft: rgb(217 78 31 / 0.12);
-  --color-gold: #c4a24a;
-  --color-moss: #7fa878;
-
-  --color-line: rgb(235 229 217 / 0.12);
-  --color-line-bright: rgb(235 229 217 / 0.25);
+  --color-line: #e0ded7;
+  --color-line-strong: #b8b5ad;
 
   /* === Semantic aliases ========================================= */
-  --color-background: var(--color-ink);
-  --color-surface: var(--color-ink-soft);
-  --color-surface-raised: var(--color-ink-card);
-  --color-foreground: var(--color-paper);
-  --color-foreground-dim: var(--color-paper-dim);
-  --color-foreground-muted: var(--color-paper-muted);
-  --color-accent: var(--color-rust);
-  --color-accent-soft: var(--color-rust-soft);
+  --color-background: var(--color-paper);
+  --color-surface: var(--color-paper-soft);
+  --color-surface-raised: var(--color-paper-raised);
+  --color-foreground: var(--color-ink);
+  --color-foreground-soft: var(--color-ink-soft);
+  --color-foreground-dim: var(--color-ink-muted);
+  --color-foreground-muted: var(--color-ink-faint);
+  --color-accent: var(--color-ink);
+  --color-accent-soft: rgb(10 10 10 / 0.06);
   --color-border: var(--color-line);
-  --color-border-strong: var(--color-line-bright);
+  --color-border-strong: var(--color-line-strong);
 
   /* === Typography =============================================== */
   --font-display: 'Fraunces', ui-serif, Georgia, serif;
-  --font-body: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Eyebrow / label style — used as a class via .eyebrow */
