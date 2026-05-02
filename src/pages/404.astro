@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="404 — Off the table | ACE"
+  description="That card isn't in the deck."
+  noindex={true}
+>
+  <Nav />
+
+  <main id="main" class="not-found">
+    <div class="container-page nf-inner">
+      <p class="eyebrow">404</p>
+      <h1>Off the <em>table.</em></h1>
+      <p class="lead">
+        That card isn&apos;t in the deck. Either the page was moved, or it
+        never existed in the first place.
+      </p>
+      <div class="nf-actions">
+        <Button href="/">Back to safer ground <span>→</span></Button>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found {
+    padding-block: 120px 100px;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .nf-inner {
+    max-width: 720px;
+  }
+
+  .not-found .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .not-found h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-foreground-dim);
+  }
+
+  .not-found .lead {
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  .nf-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .not-found {
+      padding-block: 64px 56px;
+    }
+  }
+</style>
