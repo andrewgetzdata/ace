@@ -1,0 +1,61 @@
+---
+interface Props {
+  variant?: 'full' | 'mark';
+  size?: number;
+  href?: string | null;
+  class?: string;
+}
+
+const {
+  variant = 'full',
+  size = 22,
+  href = import.meta.env.BASE_URL || '/',
+  class: className = '',
+} = Astro.props;
+
+const Tag = href ? 'a' : 'span';
+---
+
+<Tag
+  {...(href ? { href } : {})}
+  class:list={['logo', `logo--${variant}`, className]}
+  aria-label="ACE — AI Coaching & Execution"
+>
+  <svg
+    class="logo-mark"
+    width={size}
+    height={size}
+    viewBox="0 0 64 70"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"
+      fill="currentColor"
+    />
+  </svg>
+  {variant === 'full' && <span class="logo-word">ACE</span>}
+</Tag>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-foreground);
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    color: var(--color-foreground);
+    flex-shrink: 0;
+  }
+
+  .logo-word {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+</style>

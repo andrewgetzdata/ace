@@ -1,0 +1,1072 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { principles } from '../data/principles';
+---
+
+<BaseLayout>
+  <Nav />
+
+  <main id="main">
+    <header class="hero">
+    <div class="container-page hero-inner">
+      <p class="eyebrow">AI Coaching &amp; Execution</p>
+      <h1>Judgment <em>over tooling.</em></h1>
+      <p class="lead">
+        An AI advisory practice for operator-led companies. Judgment from the
+        outside, hands when you need them. No tool-of-the-month.
+      </p>
+      <div class="hero-actions">
+        <Button href="#book">Book an intro <span>→</span></Button>
+        <Button href="#how" variant="ghost">How it works</Button>
+      </div>
+    </div>
+  </header>
+
+  <Section id="thesis" eyebrow="The thesis" number="01">
+    <div class="thesis-grid">
+      <div class="thesis-copy">
+        <h2>Between buying everything and buying nothing, there&apos;s a third option.</h2>
+        <div class="prose">
+          <p>
+            Operators are getting squeezed from both sides — vendors knocking on
+            the door, teams pressuring them to &ldquo;do something about AI.&rdquo;
+            Most leadership teams end up making either the worst decision (buy
+            everything) or the second-worst (buy nothing).
+          </p>
+          <p>
+            ACE is the third option: a clear framework, a trusted outside voice,
+            and hands when you need them. I don&apos;t build AI for you unless I
+            have to. I help your leadership team make good AI decisions, then
+            either configure existing tools to solve the problem — most cases — or
+            build something custom when nothing off the shelf will work.
+          </p>
+          <p>
+            Three outcomes, repeatable across every engagement: better decisions
+            on which AI initiatives to pursue, lower spend on the ones that
+            don&apos;t fit, and real working AI inside the workflows where it
+            earns its keep.
+          </p>
+        </div>
+      </div>
+      <aside class="ace-card" aria-hidden="true">
+        <span class="ace-card-corner ace-card-corner--tl">
+          <span class="ace-card-letter">A</span>
+          <svg class="ace-card-pip" viewBox="0 0 64 70" fill="currentColor"><path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"/></svg>
+        </span>
+        <svg class="ace-card-mark" viewBox="0 0 64 70" fill="currentColor" aria-hidden="true"><path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"/></svg>
+        <span class="ace-card-wordmark">Advise · Coach · Execute</span>
+        <span class="ace-card-corner ace-card-corner--br">
+          <span class="ace-card-letter">A</span>
+          <svg class="ace-card-pip" viewBox="0 0 64 70" fill="currentColor"><path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"/></svg>
+        </span>
+      </aside>
+    </div>
+  </Section>
+
+  <Section id="how" eyebrow="How we plug in" number="02">
+    <h2>Three modes. One client at a time.</h2>
+    <p class="lead mb-lead">
+      Pick the engagement that matches the question. Move between modes as the
+      work evolves — most clients do.
+    </p>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-head">
+          <span class="card-tag">Mode A</span>
+          <h3>Advise</h3>
+        </div>
+        <p class="card-body">
+          Working sessions with the operator. We cut through the noise,
+          right-size ambition, and make the next 30 days legible. You leave
+          each session with a decision, not a deck.
+        </p>
+        <ul class="card-list">
+          <li>2 working sessions / month</li>
+          <li>Async between sessions</li>
+          <li>Month-to-month</li>
+        </ul>
+      </article>
+
+      <article class="card card--featured">
+        <div class="card-head">
+          <span class="card-tag">Mode C</span>
+          <h3>Coach</h3>
+        </div>
+        <p class="card-body">
+          We coach your team through the work — picking the right bets,
+          designing the right workflows, holding the line on quality. You
+          ship; we make sure it ships well.
+        </p>
+        <ul class="card-list">
+          <li>Weekly session with the team lead</li>
+          <li>Monthly 1:1 with the operator</li>
+          <li>Async review of work-in-progress</li>
+          <li>Month-to-month</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <span class="card-tag">Mode E</span>
+          <h3>Execute</h3>
+        </div>
+        <p class="card-body">
+          Project-priced delivery for a scoped piece of work. We scope, build,
+          and hand off — with a written runbook so your team can run it.
+        </p>
+        <ul class="card-list">
+          <li>Fixed scope &amp; window</li>
+          <li>Statement of work up front</li>
+          <li>Hand-off included</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section id="who" eyebrow="Who it's for" number="03">
+    <h2>Operator-led companies between $5M and $250M.</h2>
+    <p class="lead mb-lead">
+      You&apos;ve grown past the founder-as-everything stage. You haven&apos;t
+      grown into the layer of process that lets AI initiatives die in
+      committee. That window is where the leverage is.
+    </p>
+    <div class="who-grid">
+      <article class="who-card">
+        <span class="who-tag">Profile 01</span>
+        <h3>The CEO who keeps closing tabs.</h3>
+        <p>
+          Eight tools open, three vendor pitches in the inbox, no clear next
+          step. We make the next 30 days legible — and kill the bets that
+          don&apos;t earn the time.
+        </p>
+      </article>
+      <article class="who-card">
+        <span class="who-tag">Profile 02</span>
+        <h3>The COO running on instinct.</h3>
+        <p>
+          The team is asking for AI tools faster than you can evaluate them.
+          We pair on the highest-leverage 2 — and write a one-pager you can
+          hand back to anyone else asking.
+        </p>
+      </article>
+      <article class="who-card">
+        <span class="who-tag">Profile 03</span>
+        <h3>The founder who&apos;s been burned.</h3>
+        <p>
+          You&apos;ve hired AI consultants before. You got a deck and a
+          number. We work in your tools, ship something running, and write
+          the runbook so your team can keep it alive.
+        </p>
+      </article>
+    </div>
+    <div class="filter-grid">
+      <div class="filter-col filter-col--yes">
+        <span class="filter-tag">This is for you if</span>
+        <ul>
+          <li>You run an operator-led business between $5M and $250M.</li>
+          <li>
+            You&apos;ve felt the gap between AI capability and AI judgment.
+          </li>
+          <li>You want a thinking partner, not a vendor pitch deck.</li>
+          <li>You can move on a 30-day decision cycle.</li>
+          <li>You&apos;re willing to kill an idea when the math says so.</li>
+        </ul>
+      </div>
+      <div class="filter-col filter-col--no">
+        <span class="filter-tag">This isn&apos;t for you if</span>
+        <ul>
+          <li>You want a 60-page strategy doc to file away.</li>
+          <li>You&apos;re looking for the cheapest-bid implementation.</li>
+          <li>You want us to be the only voice in the room.</li>
+          <li>You&apos;re optimizing for headline announcements.</li>
+          <li>You think AI is a procurement problem.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="who-note">
+      <span class="eyebrow">Note</span>
+      Logos &amp; named case studies on request — we don&apos;t list active
+      clients publicly. <a href="#book">Ask in an intro.</a>
+    </p>
+  </Section>
+
+  <Section id="about" eyebrow="About" number="04">
+    <h2>An engineer, not a deck.</h2>
+    <div class="about-grid">
+      <div class="prose">
+        <p>
+          ACE — Advise, Coach, Execute — is led by Andrew Getz, a data and AI
+          engineer with a decade of experience shipping production systems
+          for operator-led companies. Master&apos;s in Analytics from Georgia
+          Tech. Multi-million-dollar cost optimization track record across
+          data infrastructure and platform work. Most recently: building
+          semantic layers for frontline AI agents — the unglamorous
+          engineering that turns messy operational data into something AI can
+          actually reason over.
+        </p>
+        <p>
+          Small and mid-sized businesses don&apos;t need another AI platform —
+          they need the discipline to evaluate which AI investments will
+          actually pay off, the engineering to ship the ones that do, and the
+          honesty to walk away from the ones that won&apos;t. The work is
+          fast, tactile, hands-on — comfortable in a leadership team
+          conversation, the terminal, and the agent runtime, sometimes in the
+          same hour.
+        </p>
+      </div>
+      <aside class="about-side">
+        <div class="about-stat">
+          <span class="about-stat-num">10 yrs</span>
+          <span class="about-stat-label">Shipping data &amp; AI in production</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">M.S.</span>
+          <span class="about-stat-label">Analytics, Georgia Tech</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">Columbus, OH</span>
+          <span class="about-stat-label">Engagements nationwide</span>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  <Section id="philosophy" eyebrow="Philosophy" number="05">
+    <h2>How I think.</h2>
+    <p class="lead mb-lead">
+      Twelve working principles. How I make decisions, run engagements,
+      and hold the work accountable.
+    </p>
+    <ol class="phi-deck" role="list" aria-label="Working principles">
+      {
+        principles.map((p) => (
+          <li id={`p-${p.n}`} class="phi-card">
+            <span class="phi-card-corner phi-card-corner--tl">
+              <span class="phi-card-num">{p.n}</span>
+              <svg class="phi-card-pip" viewBox="0 0 64 70" fill="currentColor" aria-hidden="true">
+                <path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z" />
+              </svg>
+            </span>
+            <div class="phi-card-body">
+              <h3 class="phi-card-title">{p.title}</h3>
+              <p class="phi-card-text">{p.body}</p>
+              <p class="phi-card-credit">h/t {p.credit}</p>
+            </div>
+            <span class="phi-card-corner phi-card-corner--br">
+              <span class="phi-card-num">{p.n}</span>
+              <svg class="phi-card-pip" viewBox="0 0 64 70" fill="currentColor" aria-hidden="true">
+                <path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z" />
+              </svg>
+            </span>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="phi-deck-hint">Swipe or scroll →</p>
+  </Section>
+
+  <Section id="tiers" eyebrow="Pricing" number="06">
+    <h2>Pricing that matches the work.</h2>
+    <p class="lead mb-lead">
+      Transparent floors. Custom ceilings. We turn down work we can&apos;t do
+      well.
+    </p>
+    <div class="tiers">
+      <article class="tier">
+        <header class="tier-head">
+          <span class="card-tag">Mode A</span>
+          <h3>Advise</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">From</span>
+          <span class="tier-price-num">$1,500</span>
+          <span class="tier-price-unit">/ month</span>
+        </div>
+        <ul class="tier-list">
+          <li>2 working sessions monthly</li>
+          <li>Slack &amp; email between sessions</li>
+          <li>One operator, one advisor</li>
+          <li>Month-to-month, cancel anytime</li>
+        </ul>
+        <Button href="#book" variant="ghost">Talk it through →</Button>
+      </article>
+
+      <article class="tier tier--featured">
+        <header class="tier-head">
+          <span class="card-tag">Mode C</span>
+          <h3>Coach</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">From</span>
+          <span class="tier-price-num">$4,000</span>
+          <span class="tier-price-unit">/ month</span>
+        </div>
+        <ul class="tier-list">
+          <li>Weekly working session with team lead</li>
+          <li>Monthly 1:1 with the operator</li>
+          <li>Async review of WIP</li>
+          <li>Month-to-month, cancel anytime</li>
+        </ul>
+        <Button href="#book">Book an intro →</Button>
+      </article>
+
+      <article class="tier">
+        <header class="tier-head">
+          <span class="card-tag">Mode E</span>
+          <h3>Execute</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">Project priced</span>
+          <span class="tier-price-num">$10k+</span>
+          <span class="tier-price-unit">/ engagement</span>
+        </div>
+        <ul class="tier-list">
+          <li>Scoped statement of work</li>
+          <li>Fixed delivery window</li>
+          <li>Runbook &amp; hand-off included</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <Button href="#book" variant="ghost">Scope a project →</Button>
+      </article>
+    </div>
+  </Section>
+
+  <Section id="book" eyebrow="Book" number="07" divider={false}>
+    <div class="cta">
+      <h2>Let&apos;s see if we fit.</h2>
+      <p class="lead">
+        30 minutes. No deck. No follow-up. Just a call.
+      </p>
+      <div class="cta-actions">
+        <Button href="mailto:hello@ace.example?subject=Intro%20call">
+          Book the intro <span>→</span>
+        </Button>
+        <Button href="mailto:hello@ace.example" variant="ghost">
+          Or just email us
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero ---------------------------------------------------------- */
+  .hero {
+    padding-block: 120px 100px;
+  }
+
+  .hero-inner {
+    max-width: 980px;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-foreground-dim);
+  }
+
+  .hero .lead {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    max-width: 620px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-block: 64px 56px;
+    }
+  }
+
+  /* Shared --------------------------------------------------------- */
+  .mb-lead {
+    margin-bottom: 56px;
+  }
+
+  /* Thesis card ---------------------------------------------------- */
+  .thesis-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+    gap: 64px;
+    align-items: start;
+  }
+
+  .thesis-copy h2 {
+    margin-top: 0;
+  }
+
+  .ace-card {
+    position: relative;
+    aspect-ratio: 5 / 7;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .ace-card {
+        animation: ace-card-tilt linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+
+      @keyframes ace-card-tilt {
+        0% {
+          transform: perspective(900px) translateZ(-80px) rotateY(-28deg) rotateX(10deg) scale(0.92);
+        }
+        50% {
+          transform: perspective(900px) translateZ(0) rotateY(0deg) rotateX(0deg) scale(1);
+        }
+        100% {
+          transform: perspective(900px) translateZ(-60px) rotateY(24deg) rotateX(-8deg) scale(0.94);
+        }
+      }
+    }
+  }
+
+  .ace-card-corner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+
+  .ace-card-corner--tl {
+    top: 18px;
+    left: 22px;
+  }
+
+  .ace-card-corner--br {
+    bottom: 18px;
+    right: 22px;
+    transform: rotate(180deg);
+  }
+
+  .ace-card-letter {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    color: var(--color-paper);
+  }
+
+  .ace-card-pip {
+    width: 11px;
+    height: 12px;
+    color: var(--color-paper);
+  }
+
+  .ace-card-mark {
+    width: 88px;
+    height: auto;
+    color: var(--color-paper);
+  }
+
+  .ace-card-wordmark {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgb(250 250 247 / 0.7);
+  }
+
+  @media (max-width: 880px) {
+    .thesis-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .ace-card {
+      margin-inline: auto;
+      max-width: 320px;
+    }
+  }
+
+  /* Cards (How we plug in) ---------------------------------------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card--featured {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border-color: var(--color-ink);
+  }
+
+  .card--featured h3,
+  .card--featured .card-tag {
+    color: var(--color-paper);
+  }
+
+  .card--featured .card-body,
+  .card--featured .card-list li {
+    color: rgb(250 250 247 / 0.78);
+  }
+
+  .card--featured .card-list li::before {
+    background: rgb(250 250 247 / 0.5);
+  }
+
+  .card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .card h3 {
+    margin-bottom: 0;
+  }
+
+  .card-body {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--color-foreground-soft);
+  }
+
+  .card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+  }
+
+  .card--featured .card-list {
+    border-color: rgb(250 250 247 / 0.18);
+  }
+
+  .card-list li {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--color-foreground-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--color-foreground-dim);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Filter --------------------------------------------------------- */
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 64px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .filter-col {
+    padding: 40px 36px;
+  }
+
+  .filter-col--yes {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .filter-col--no {
+    background: var(--color-surface);
+  }
+
+  .filter-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-dim);
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .filter-col--no .filter-tag {
+    color: var(--color-foreground-muted);
+  }
+
+  .filter-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .filter-col li {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--color-foreground-soft);
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .filter-col--yes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 12px;
+    height: 1px;
+    background: var(--color-foreground);
+  }
+
+  .filter-col--no li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-foreground-muted);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* Tiers ---------------------------------------------------------- */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .tier {
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .tier--featured {
+    border-color: var(--color-foreground);
+    border-width: 1.5px;
+    box-shadow: 0 16px 40px -24px rgb(10 10 10 / 0.18);
+  }
+
+  .tier-head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tier h3 {
+    margin: 0;
+  }
+
+  .tier-price {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .tier-price-from {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+    width: 100%;
+  }
+
+  .tier-price-num {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+    line-height: 1;
+  }
+
+  .tier-price-unit {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-foreground-dim);
+  }
+
+  .tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .tier-list li {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-foreground-soft);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .tier-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 1px;
+    background: var(--color-foreground-dim);
+  }
+
+  /* Who ------------------------------------------------------------ */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .who-card {
+    border-top: 2px solid var(--color-foreground);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .who-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .who-card h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .who-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-foreground-soft);
+  }
+
+  .who-note {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-foreground-dim);
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .who-note a {
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* About ---------------------------------------------------------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-left: 1px solid var(--color-border);
+    padding-left: 32px;
+  }
+
+  .about-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .about-stat-num {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+    line-height: 1;
+  }
+
+  .about-stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-dim);
+  }
+
+  /* Philosophy deck (carousel) ------------------------------------ */
+  .phi-deck {
+    list-style: none;
+    margin: 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 8px 32px 24px;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 32px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .phi-deck::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .phi-deck::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 4px;
+  }
+
+  .phi-card {
+    flex: 0 0 clamp(240px, 26vw, 340px);
+    aspect-ratio: 5 / 7;
+    scroll-snap-align: start;
+    scroll-margin-top: 96px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phi-card-corner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+
+  .phi-card-corner--tl {
+    top: 22px;
+    left: 26px;
+  }
+
+  .phi-card-corner--br {
+    bottom: 22px;
+    right: 26px;
+    transform: rotate(180deg);
+  }
+
+  .phi-card-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    color: var(--color-paper);
+  }
+
+  .phi-card-pip {
+    width: 11px;
+    height: 12px;
+    color: var(--color-paper);
+  }
+
+  .phi-card-body {
+    text-align: center;
+    max-width: 30ch;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .phi-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--color-paper);
+  }
+
+  .phi-card-text {
+    font-family: var(--font-display);
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: rgb(250 250 247 / 0.78);
+    margin: 0;
+  }
+
+  .phi-card-credit {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgb(250 250 247 / 0.55);
+    margin: 4px 0 0;
+  }
+
+  .phi-deck-hint {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+    margin-top: 16px;
+  }
+
+  @media (max-width: 760px) {
+    .phi-card {
+      padding: 28px;
+      flex-basis: clamp(240px, 72vw, 320px);
+    }
+
+    .phi-deck {
+      padding-inline: 20px;
+      scroll-padding-inline: 20px;
+      gap: 16px;
+    }
+  }
+
+  /* CTA ------------------------------------------------------------ */
+  .cta {
+    text-align: center;
+    max-width: 720px;
+    margin: 32px auto 0;
+  }
+
+  .cta .lead {
+    margin-inline: auto;
+    margin-block: 24px 40px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive ----------------------------------------------------- */
+  @media (max-width: 880px) {
+    .card-grid,
+    .tiers,
+    .who-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-col--yes {
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-side {
+      border-left: none;
+      border-top: 1px solid var(--color-border);
+      padding-left: 0;
+      padding-top: 32px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .about-stat {
+      flex: 1 1 140px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .filter-col {
+      padding: 32px 24px;
+    }
+    .tier-price-num,
+    .about-stat-num {
+      font-size: 32px;
+    }
+  }
+</style>

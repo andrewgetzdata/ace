@@ -1,0 +1,445 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const notes = (await getCollection('notes', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const allTags = Array.from(
+  new Set(notes.flatMap((n) => n.data.tags ?? []))
+).sort((a, b) => a.localeCompare(b));
+
+const allModes = ['advise', 'coach', 'execute'] as const;
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Notes — ACE"
+  description="Working notes from the practice. Operator-first thinking on AI, judgment, and what the deck doesn't tell you."
+>
+  <Nav />
+
+  <main id="main">
+    <header class="notes-hero">
+      <div class="container-page">
+        <p class="eyebrow">Notes</p>
+        <h1>Working notes from <em>the practice.</em></h1>
+        <p class="lead">
+          What we&apos;re thinking about, what we&apos;re seeing in the field,
+          and the questions we&apos;re asking inside our engagements.
+        </p>
+      </div>
+    </header>
+
+    <section class="notes-list-section">
+      <div class="container-page">
+        <div class="notes-filters notes-filters--modes" role="group" aria-label="Filter notes by mode">
+          <span class="notes-filters-label">Mode</span>
+          <div class="notes-filter-chips">
+            <button
+              type="button"
+              class="notes-chip notes-chip--mode is-active"
+              data-mode="__all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            {allModes.map((m) => (
+              <button
+                type="button"
+                class="notes-chip notes-chip--mode"
+                data-mode={m}
+                aria-pressed="false"
+              >
+                {m}
+              </button>
+            ))}
+          </div>
+        </div>
+        {allTags.length > 0 && (
+          <div class="notes-filters" role="group" aria-label="Filter notes by subject">
+            <span class="notes-filters-label">Subject</span>
+            <div class="notes-filter-chips">
+              <button
+                type="button"
+                class="notes-chip is-active"
+                data-tag="__all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              {allTags.map((t) => (
+                <button
+                  type="button"
+                  class="notes-chip"
+                  data-tag={t}
+                  aria-pressed="false"
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        {
+          notes.length === 0 ? (
+            <p class="empty">No notes published yet.</p>
+          ) : (
+            <ol class="notes-list" id="notes-list">
+              {notes.map((n) => (
+                <li
+                  class="notes-row"
+                  data-tags={(n.data.tags ?? []).join('|')}
+                  data-modes={(n.data.modes ?? []).join('|')}
+                >
+                  <a href={`${base}/notes/${n.id}`} class="notes-row-link">
+                    <div class="notes-row-meta">
+                      <time datetime={n.data.pubDate.toISOString()}>
+                        {fmtDate(n.data.pubDate)}
+                      </time>
+                      {n.data.modes?.length > 0 && (
+                        <span class="notes-row-modes">
+                          {n.data.modes.map((m) => (
+                            <span class="notes-row-mode">{m}</span>
+                          ))}
+                        </span>
+                      )}
+                      {n.data.tags?.length > 0 && (
+                        <span class="notes-row-tags">
+                          {n.data.tags.join(' · ')}
+                        </span>
+                      )}
+                    </div>
+                    <h2>{n.data.title}</h2>
+                    {n.data.description && (
+                      <p class="notes-row-desc">{n.data.description}</p>
+                    )}
+                    <span class="notes-row-arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          )
+        }
+        <p class="notes-empty-filter" hidden>
+          No notes match that filter.
+        </p>
+      </div>
+    </section>
+
+    <script is:inline>
+      (() => {
+        const modeChips = document.querySelectorAll('.notes-chip--mode');
+        const tagChips = document.querySelectorAll('.notes-chip[data-tag]');
+        const rows = document.querySelectorAll('.notes-row');
+        const empty = document.querySelector('.notes-empty-filter');
+        if (!rows.length) return;
+
+        let activeMode = '__all';
+        let activeTag = '__all';
+
+        const apply = () => {
+          let visible = 0;
+          rows.forEach((row) => {
+            const tags = (row.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const modes = (row.getAttribute('data-modes') || '').split('|').filter(Boolean);
+            const modeOk = activeMode === '__all' || modes.includes(activeMode);
+            const tagOk = activeTag === '__all' || tags.includes(activeTag);
+            const show = modeOk && tagOk;
+            row.hidden = !show;
+            if (show) visible++;
+          });
+          if (empty) empty.hidden = visible !== 0;
+        };
+
+        const wire = (chips, attr, setActive) => {
+          chips.forEach((chip) => {
+            chip.addEventListener('click', () => {
+              const value = chip.getAttribute(attr);
+              chips.forEach((c) => {
+                const active = c === chip;
+                c.classList.toggle('is-active', active);
+                c.setAttribute('aria-pressed', active ? 'true' : 'false');
+              });
+              setActive(value);
+              apply();
+            });
+          });
+        };
+
+        wire(modeChips, 'data-mode', (v) => (activeMode = v));
+        wire(tagChips, 'data-tag', (v) => (activeTag = v));
+      })();
+    </script>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .notes-hero {
+    padding-block: 120px 64px;
+  }
+
+  .notes-hero .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .notes-hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-foreground-dim);
+  }
+
+  .notes-hero .lead {
+    margin-top: 32px;
+    max-width: 620px;
+  }
+
+  .notes-list-section {
+    padding-block: 32px 120px;
+  }
+
+  .notes-filters {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+
+  .notes-filters--modes {
+    padding-bottom: 14px;
+  }
+
+  .notes-filters + .notes-filters {
+    padding-top: 4px;
+    padding-bottom: 32px;
+    margin-bottom: 8px;
+  }
+
+  .notes-filters-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .notes-filter-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .notes-chip {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-foreground-soft);
+    cursor: pointer;
+    transition:
+      color 0.15s,
+      border-color 0.15s,
+      background 0.15s;
+  }
+
+  .notes-chip:hover {
+    color: var(--color-foreground);
+    border-color: var(--color-foreground-muted);
+  }
+
+  .notes-chip.is-active {
+    background: var(--color-foreground);
+    border-color: var(--color-foreground);
+    color: var(--color-background, #fafaf7);
+  }
+
+  .notes-chip--mode {
+    color: #8a4b2c;
+    border-color: rgba(138, 75, 44, 0.35);
+  }
+
+  .notes-chip--mode:hover {
+    color: #6b3920;
+    border-color: rgba(138, 75, 44, 0.6);
+  }
+
+  .notes-chip--mode.is-active {
+    background: #8a4b2c;
+    border-color: #8a4b2c;
+    color: var(--color-background, #fafaf7);
+  }
+
+  .notes-row-modes {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .notes-row-mode {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid rgba(138, 75, 44, 0.35);
+    border-radius: 999px;
+    color: #8a4b2c;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+
+  .notes-empty-filter {
+    color: var(--color-foreground-dim);
+    font-size: 17px;
+    padding-top: 32px;
+  }
+
+  .notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notes-row {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .notes-row:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .notes-row-link {
+    display: block;
+    position: relative;
+    padding: 56px 64px 56px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: padding-left 0.3s ease;
+  }
+
+  .notes-row-link:hover {
+    padding-left: 16px;
+  }
+
+  .notes-row-meta {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .notes-row-meta time {
+    color: var(--color-foreground-dim);
+  }
+
+  .notes-row-meta time + .notes-row-modes::before,
+  .notes-row-meta time + .notes-row-tags::before,
+  .notes-row-meta .notes-row-modes + .notes-row-tags::before {
+    content: '·';
+    margin-right: 12px;
+    color: var(--color-foreground-muted);
+  }
+
+  .notes-row h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0 0 16px;
+    max-width: 22ch;
+    transition: text-decoration-color 0.2s;
+  }
+
+  .notes-row-link:hover h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+  }
+
+  .notes-row-desc {
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--color-foreground-soft);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .notes-row-arrow {
+    position: absolute;
+    right: 0;
+    top: 56px;
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--color-foreground-muted);
+    transition:
+      color 0.2s,
+      transform 0.3s ease;
+  }
+
+  .notes-row-link:hover .notes-row-arrow {
+    color: var(--color-foreground);
+    transform: translateX(8px);
+  }
+
+  .empty {
+    color: var(--color-foreground-dim);
+    font-size: 17px;
+  }
+
+  @media (max-width: 760px) {
+    .notes-hero {
+      padding-block: 64px 32px;
+    }
+
+    .notes-row-link {
+      padding: 40px 40px 40px 0;
+    }
+
+    .notes-row-link:hover {
+      padding-left: 0;
+    }
+
+    .notes-row-arrow {
+      top: 40px;
+      font-size: 22px;
+    }
+
+    .notes-row-meta {
+      margin-bottom: 14px;
+    }
+
+    .notes-row h2 {
+      max-width: none;
+    }
+  }
+</style>

@@ -1,0 +1,108 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  number?: string;
+  divider?: boolean;
+  class?: string;
+}
+
+const {
+  id,
+  eyebrow,
+  number,
+  divider = true,
+  class: className = '',
+} = Astro.props;
+---
+
+<section id={id} class:list={['section', className]}>
+  <div class="container-page">
+    {
+      eyebrow && (
+        <div class="section-label">
+          {number && <span class="section-num">{number}</span>}
+          <span>{eyebrow}</span>
+        </div>
+      )
+    }
+    <slot />
+  </div>
+  {
+    divider && (
+      <div class="section-divider" aria-hidden="true">
+        <span class="section-divider-line" />
+        <svg
+          class="section-divider-spade"
+          width="14"
+          height="14"
+          viewBox="0 0 64 70"
+          fill="none"
+        >
+          <path
+            d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span class="section-divider-line" />
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .section {
+    padding-block: 105px 0;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-foreground-dim);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-num {
+    color: var(--color-foreground-muted);
+  }
+
+  .section-divider {
+    margin-top: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .section-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+    max-width: 240px;
+  }
+
+  .section-divider-spade {
+    color: var(--color-foreground);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .section {
+      padding-block: 72px 0;
+    }
+
+    .section-divider {
+      margin-top: 72px;
+    }
+
+    .section-divider-line {
+      max-width: 96px;
+    }
+  }
+</style>
