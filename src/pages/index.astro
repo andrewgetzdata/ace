@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { principles } from '../data/principles';
 ---
 
 <BaseLayout>
@@ -26,24 +27,43 @@ import Footer from '../components/Footer.astro';
   </header>
 
   <Section id="thesis" eyebrow="The thesis" number="01">
-    <h2>Most AI consulting is being done by people who&apos;ve never owned a P&amp;L.</h2>
-    <div class="prose">
-      <p>
-        The capability gap isn&apos;t tooling. It&apos;s judgment. The companies
-        getting hurt aren&apos;t the ones using ChatGPT — they&apos;re the ones
-        being sold an AI strategy by people who&apos;ve never had to make
-        payroll.
-      </p>
-      <p>
-        We&apos;ve built and run operator-led businesses. We&apos;ve also
-        shipped AI in production for companies you&apos;ve heard of. Both
-        matter. Either alone is dangerous.
-      </p>
-      <p>
-        ACE is the practice we wish existed when we were the operator: judgment
-        from the outside, hands when you need them, and a refusal to
-        recommend the tool of the month.
-      </p>
+    <div class="thesis-grid">
+      <div class="thesis-copy">
+        <h2>Between buying everything and buying nothing, there&apos;s a third option.</h2>
+        <div class="prose">
+          <p>
+            Operators are getting squeezed from both sides — vendors knocking on
+            the door, teams pressuring them to &ldquo;do something about AI.&rdquo;
+            Most leadership teams end up making either the worst decision (buy
+            everything) or the second-worst (buy nothing).
+          </p>
+          <p>
+            ACE is the third option: a clear framework, a trusted outside voice,
+            and hands when you need them. I don&apos;t build AI for you unless I
+            have to. I help your leadership team make good AI decisions, then
+            either configure existing tools to solve the problem — most cases — or
+            build something custom when nothing off the shelf will work.
+          </p>
+          <p>
+            Three outcomes, repeatable across every engagement: better decisions
+            on which AI initiatives to pursue, lower spend on the ones that
+            don&apos;t fit, and real working AI inside the workflows where it
+            earns its keep.
+          </p>
+        </div>
+      </div>
+      <aside class="ace-card" aria-hidden="true">
+        <span class="ace-card-corner ace-card-corner--tl">
+          <span class="ace-card-letter">A</span>
+          <svg class="ace-card-pip" viewBox="0 0 64 70" fill="currentColor"><path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"/></svg>
+        </span>
+        <svg class="ace-card-mark" viewBox="0 0 64 70" fill="currentColor" aria-hidden="true"><path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"/></svg>
+        <span class="ace-card-wordmark">Advise · Coach · Execute</span>
+        <span class="ace-card-corner ace-card-corner--br">
+          <span class="ace-card-letter">A</span>
+          <svg class="ace-card-pip" viewBox="0 0 64 70" fill="currentColor"><path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z"/></svg>
+        </span>
+      </aside>
     </div>
   </Section>
 
@@ -67,7 +87,7 @@ import Footer from '../components/Footer.astro';
         <ul class="card-list">
           <li>2 working sessions / month</li>
           <li>Async between sessions</li>
-          <li>90-day minimum</li>
+          <li>Month-to-month</li>
         </ul>
       </article>
 
@@ -79,13 +99,13 @@ import Footer from '../components/Footer.astro';
         <p class="card-body">
           We coach your team through the work — picking the right bets,
           designing the right workflows, holding the line on quality. You
-          ship; we make sure it ships well. Most clients start here.
+          ship; we make sure it ships well.
         </p>
         <ul class="card-list">
           <li>Weekly session with the team lead</li>
           <li>Monthly 1:1 with the operator</li>
           <li>Async review of work-in-progress</li>
-          <li>Quarterly minimum</li>
+          <li>Month-to-month</li>
         </ul>
       </article>
 
@@ -107,101 +127,7 @@ import Footer from '../components/Footer.astro';
     </div>
   </Section>
 
-  <Section id="filter" eyebrow="Is this for you?" number="03">
-    <h2>We&apos;re not for everyone. That&apos;s the point.</h2>
-    <div class="filter-grid">
-      <div class="filter-col filter-col--yes">
-        <span class="filter-tag">This is for you if</span>
-        <ul>
-          <li>You run an operator-led business between $5M and $250M.</li>
-          <li>
-            You&apos;ve felt the gap between AI capability and AI judgment.
-          </li>
-          <li>You want a thinking partner, not a vendor pitch deck.</li>
-          <li>You can move on a 30-day decision cycle.</li>
-          <li>You&apos;re willing to kill an idea when the math says so.</li>
-        </ul>
-      </div>
-      <div class="filter-col filter-col--no">
-        <span class="filter-tag">This isn&apos;t for you if</span>
-        <ul>
-          <li>You want a 60-page strategy doc to file away.</li>
-          <li>You&apos;re looking for the cheapest-bid implementation.</li>
-          <li>You want us to be the only voice in the room.</li>
-          <li>You&apos;re optimizing for headline announcements.</li>
-          <li>You think AI is a procurement problem.</li>
-        </ul>
-      </div>
-    </div>
-  </Section>
-
-  <Section id="tiers" eyebrow="Tiers" number="04">
-    <h2>Pricing that matches the work.</h2>
-    <p class="lead mb-lead">
-      Transparent floors. Custom ceilings. We turn down work we can&apos;t do
-      well.
-    </p>
-    <div class="tiers">
-      <article class="tier">
-        <header class="tier-head">
-          <span class="card-tag">Mode A</span>
-          <h3>Advise</h3>
-        </header>
-        <div class="tier-price">
-          <span class="tier-price-from">From</span>
-          <span class="tier-price-num">$[X],000</span>
-          <span class="tier-price-unit">/ month</span>
-        </div>
-        <ul class="tier-list">
-          <li>2 working sessions monthly</li>
-          <li>Slack &amp; email between sessions</li>
-          <li>One operator, one advisor</li>
-          <li>90-day minimum</li>
-        </ul>
-        <Button href="#book" variant="ghost">Talk it through →</Button>
-      </article>
-
-      <article class="tier tier--featured">
-        <header class="tier-head">
-          <span class="card-tag">Mode C</span>
-          <h3>Coach</h3>
-        </header>
-        <div class="tier-price">
-          <span class="tier-price-from">From</span>
-          <span class="tier-price-num">$[XX],000</span>
-          <span class="tier-price-unit">/ month</span>
-        </div>
-        <ul class="tier-list">
-          <li>Weekly working session with team lead</li>
-          <li>Monthly 1:1 with the operator</li>
-          <li>Async review of WIP</li>
-          <li>Quarterly minimum</li>
-        </ul>
-        <Button href="#book">Book an intro →</Button>
-      </article>
-
-      <article class="tier">
-        <header class="tier-head">
-          <span class="card-tag">Mode E</span>
-          <h3>Execute</h3>
-        </header>
-        <div class="tier-price">
-          <span class="tier-price-from">Project priced</span>
-          <span class="tier-price-num">$[XX]–[XXX]k</span>
-          <span class="tier-price-unit">/ engagement</span>
-        </div>
-        <ul class="tier-list">
-          <li>Scoped statement of work</li>
-          <li>Fixed delivery window</li>
-          <li>Runbook &amp; hand-off included</li>
-          <li>30-day post-launch support</li>
-        </ul>
-        <Button href="#book" variant="ghost">Scope a project →</Button>
-      </article>
-    </div>
-  </Section>
-
-  <Section id="who" eyebrow="Who it's for" number="05">
+  <Section id="who" eyebrow="Who it's for" number="03">
     <h2>Operator-led companies between $5M and $250M.</h2>
     <p class="lead mb-lead">
       You&apos;ve grown past the founder-as-everything stage. You haven&apos;t
@@ -237,6 +163,30 @@ import Footer from '../components/Footer.astro';
         </p>
       </article>
     </div>
+    <div class="filter-grid">
+      <div class="filter-col filter-col--yes">
+        <span class="filter-tag">This is for you if</span>
+        <ul>
+          <li>You run an operator-led business between $5M and $250M.</li>
+          <li>
+            You&apos;ve felt the gap between AI capability and AI judgment.
+          </li>
+          <li>You want a thinking partner, not a vendor pitch deck.</li>
+          <li>You can move on a 30-day decision cycle.</li>
+          <li>You&apos;re willing to kill an idea when the math says so.</li>
+        </ul>
+      </div>
+      <div class="filter-col filter-col--no">
+        <span class="filter-tag">This isn&apos;t for you if</span>
+        <ul>
+          <li>You want a 60-page strategy doc to file away.</li>
+          <li>You&apos;re looking for the cheapest-bid implementation.</li>
+          <li>You want us to be the only voice in the room.</li>
+          <li>You&apos;re optimizing for headline announcements.</li>
+          <li>You think AI is a procurement problem.</li>
+        </ul>
+      </div>
+    </div>
     <p class="who-note">
       <span class="eyebrow">Note</span>
       Logos &amp; named case studies on request — we don&apos;t list active
@@ -244,38 +194,144 @@ import Footer from '../components/Footer.astro';
     </p>
   </Section>
 
-  <Section id="about" eyebrow="About" number="06">
-    <h2>Built by operators, not by consultants.</h2>
+  <Section id="about" eyebrow="About" number="04">
+    <h2>An engineer, not a deck.</h2>
     <div class="about-grid">
       <div class="prose">
         <p>
-          [PLACEHOLDER — founder bio, ~100 words. Cover: prior operator role,
-          P&amp;L scale owned, AI-in-production credibility, and why ACE
-          exists.]
+          ACE — Advise, Coach, Execute — is led by Andrew Getz, a data and AI
+          engineer with a decade of experience shipping production systems
+          for operator-led companies. Master&apos;s in Analytics from Georgia
+          Tech. Multi-million-dollar cost optimization track record across
+          data infrastructure and platform work. Most recently: building
+          semantic layers for frontline AI agents — the unglamorous
+          engineering that turns messy operational data into something AI can
+          actually reason over.
         </p>
         <p>
-          [PLACEHOLDER — second paragraph, ~80 words. Cover: how the practice
-          works, who&apos;s on the bench, why we stay small on purpose.]
-        </p>
-        <p>
-          ACE is held to one rule: we recommend the work we&apos;d do if we
-          were back in your seat. Anything else is a vendor.
+          Small and mid-sized businesses don&apos;t need another AI platform —
+          they need the discipline to evaluate which AI investments will
+          actually pay off, the engineering to ship the ones that do, and the
+          honesty to walk away from the ones that won&apos;t. The work is
+          fast, tactile, hands-on — comfortable in a leadership team
+          conversation, the terminal, and the agent runtime, sometimes in the
+          same hour.
         </p>
       </div>
       <aside class="about-side">
         <div class="about-stat">
-          <span class="about-stat-num">$[X]B+</span>
-          <span class="about-stat-label">Operator P&amp;L owned</span>
+          <span class="about-stat-num">10 yrs</span>
+          <span class="about-stat-label">Shipping data &amp; AI in production</span>
         </div>
         <div class="about-stat">
-          <span class="about-stat-num">[X] yrs</span>
-          <span class="about-stat-label">Shipping AI in production</span>
+          <span class="about-stat-num">M.S.</span>
+          <span class="about-stat-label">Analytics, Georgia Tech</span>
         </div>
         <div class="about-stat">
-          <span class="about-stat-num">[X]</span>
-          <span class="about-stat-label">Active clients at a time</span>
+          <span class="about-stat-num">Columbus, OH</span>
+          <span class="about-stat-label">Engagements nationwide</span>
         </div>
       </aside>
+    </div>
+  </Section>
+
+  <Section id="philosophy" eyebrow="Philosophy" number="05">
+    <h2>How I think.</h2>
+    <p class="lead mb-lead">
+      Twelve working principles. How I make decisions, run engagements,
+      and hold the work accountable.
+    </p>
+    <ol class="phi-deck" role="list" aria-label="Working principles">
+      {
+        principles.map((p) => (
+          <li id={`p-${p.n}`} class="phi-card">
+            <span class="phi-card-corner phi-card-corner--tl">
+              <span class="phi-card-num">{p.n}</span>
+              <svg class="phi-card-pip" viewBox="0 0 64 70" fill="currentColor" aria-hidden="true">
+                <path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z" />
+              </svg>
+            </span>
+            <div class="phi-card-body">
+              <h3 class="phi-card-title">{p.title}</h3>
+              <p class="phi-card-text">{p.body}</p>
+              <p class="phi-card-credit">h/t {p.credit}</p>
+            </div>
+            <span class="phi-card-corner phi-card-corner--br">
+              <span class="phi-card-num">{p.n}</span>
+              <svg class="phi-card-pip" viewBox="0 0 64 70" fill="currentColor" aria-hidden="true">
+                <path d="M32 4 C32 4, 8 26, 8 42 C8 51, 14 56, 22 56 C27 56, 31 53, 32 49 C33 53, 37 56, 42 56 C50 56, 56 51, 56 42 C56 26, 32 4, 32 4 Z M22 68 C27 67, 30 62, 31 54 L33 54 C34 62, 37 67, 42 68 Z" />
+              </svg>
+            </span>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="phi-deck-hint">Swipe or scroll →</p>
+  </Section>
+
+  <Section id="tiers" eyebrow="Pricing" number="06">
+    <h2>Pricing that matches the work.</h2>
+    <p class="lead mb-lead">
+      Transparent floors. Custom ceilings. We turn down work we can&apos;t do
+      well.
+    </p>
+    <div class="tiers">
+      <article class="tier">
+        <header class="tier-head">
+          <span class="card-tag">Mode A</span>
+          <h3>Advise</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">From</span>
+          <span class="tier-price-num">$1,500</span>
+          <span class="tier-price-unit">/ month</span>
+        </div>
+        <ul class="tier-list">
+          <li>2 working sessions monthly</li>
+          <li>Slack &amp; email between sessions</li>
+          <li>One operator, one advisor</li>
+          <li>Month-to-month, cancel anytime</li>
+        </ul>
+        <Button href="#book" variant="ghost">Talk it through →</Button>
+      </article>
+
+      <article class="tier tier--featured">
+        <header class="tier-head">
+          <span class="card-tag">Mode C</span>
+          <h3>Coach</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">From</span>
+          <span class="tier-price-num">$4,000</span>
+          <span class="tier-price-unit">/ month</span>
+        </div>
+        <ul class="tier-list">
+          <li>Weekly working session with team lead</li>
+          <li>Monthly 1:1 with the operator</li>
+          <li>Async review of WIP</li>
+          <li>Month-to-month, cancel anytime</li>
+        </ul>
+        <Button href="#book">Book an intro →</Button>
+      </article>
+
+      <article class="tier">
+        <header class="tier-head">
+          <span class="card-tag">Mode E</span>
+          <h3>Execute</h3>
+        </header>
+        <div class="tier-price">
+          <span class="tier-price-from">Project priced</span>
+          <span class="tier-price-num">$10k+</span>
+          <span class="tier-price-unit">/ engagement</span>
+        </div>
+        <ul class="tier-list">
+          <li>Scoped statement of work</li>
+          <li>Fixed delivery window</li>
+          <li>Runbook &amp; hand-off included</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <Button href="#book" variant="ghost">Scope a project →</Button>
+      </article>
     </div>
   </Section>
 
@@ -283,8 +339,7 @@ import Footer from '../components/Footer.astro';
     <div class="cta">
       <h2>Let&apos;s see if we fit.</h2>
       <p class="lead">
-        30 minutes. No deck. We&apos;ll tell you within the call whether
-        we&apos;re the right call — or who is.
+        30 minutes. No deck. No follow-up. Just a call.
       </p>
       <div class="cta-actions">
         <Button href="mailto:hello@ace.example?subject=Intro%20call">
@@ -344,6 +399,120 @@ import Footer from '../components/Footer.astro';
   /* Shared --------------------------------------------------------- */
   .mb-lead {
     margin-bottom: 56px;
+  }
+
+  /* Thesis card ---------------------------------------------------- */
+  .thesis-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+    gap: 64px;
+    align-items: start;
+  }
+
+  .thesis-copy h2 {
+    margin-top: 0;
+  }
+
+  .ace-card {
+    position: relative;
+    aspect-ratio: 5 / 7;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .ace-card {
+        animation: ace-card-tilt linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+
+      @keyframes ace-card-tilt {
+        0% {
+          transform: perspective(900px) translateZ(-80px) rotateY(-28deg) rotateX(10deg) scale(0.92);
+        }
+        50% {
+          transform: perspective(900px) translateZ(0) rotateY(0deg) rotateX(0deg) scale(1);
+        }
+        100% {
+          transform: perspective(900px) translateZ(-60px) rotateY(24deg) rotateX(-8deg) scale(0.94);
+        }
+      }
+    }
+  }
+
+  .ace-card-corner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+
+  .ace-card-corner--tl {
+    top: 18px;
+    left: 22px;
+  }
+
+  .ace-card-corner--br {
+    bottom: 18px;
+    right: 22px;
+    transform: rotate(180deg);
+  }
+
+  .ace-card-letter {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    color: var(--color-paper);
+  }
+
+  .ace-card-pip {
+    width: 11px;
+    height: 12px;
+    color: var(--color-paper);
+  }
+
+  .ace-card-mark {
+    width: 88px;
+    height: auto;
+    color: var(--color-paper);
+  }
+
+  .ace-card-wordmark {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgb(250 250 247 / 0.7);
+  }
+
+  @media (max-width: 880px) {
+    .thesis-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .ace-card {
+      margin-inline: auto;
+      max-width: 320px;
+    }
   }
 
   /* Cards (How we plug in) ---------------------------------------- */
@@ -446,7 +615,7 @@ import Footer from '../components/Footer.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    margin-top: 32px;
+    margin-top: 64px;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
   }
@@ -700,6 +869,139 @@ import Footer from '../components/Footer.astro';
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-foreground-dim);
+  }
+
+  /* Philosophy deck (carousel) ------------------------------------ */
+  .phi-deck {
+    list-style: none;
+    margin: 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 8px 32px 24px;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 32px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .phi-deck::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .phi-deck::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 4px;
+  }
+
+  .phi-card {
+    flex: 0 0 clamp(240px, 26vw, 340px);
+    aspect-ratio: 5 / 7;
+    scroll-snap-align: start;
+    scroll-margin-top: 96px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phi-card-corner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+
+  .phi-card-corner--tl {
+    top: 22px;
+    left: 26px;
+  }
+
+  .phi-card-corner--br {
+    bottom: 22px;
+    right: 26px;
+    transform: rotate(180deg);
+  }
+
+  .phi-card-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    color: var(--color-paper);
+  }
+
+  .phi-card-pip {
+    width: 11px;
+    height: 12px;
+    color: var(--color-paper);
+  }
+
+  .phi-card-body {
+    text-align: center;
+    max-width: 30ch;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .phi-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--color-paper);
+  }
+
+  .phi-card-text {
+    font-family: var(--font-display);
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: rgb(250 250 247 / 0.78);
+    margin: 0;
+  }
+
+  .phi-card-credit {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgb(250 250 247 / 0.55);
+    margin: 4px 0 0;
+  }
+
+  .phi-deck-hint {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+    margin-top: 16px;
+  }
+
+  @media (max-width: 760px) {
+    .phi-card {
+      padding: 28px;
+      flex-basis: clamp(240px, 72vw, 320px);
+    }
+
+    .phi-deck {
+      padding-inline: 20px;
+      scroll-padding-inline: 20px;
+      gap: 16px;
+    }
   }
 
   /* CTA ------------------------------------------------------------ */
