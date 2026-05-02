@@ -44,16 +44,21 @@ const fmtDate = (d: Date) =>
               {notes.map((n) => (
                 <li class="notes-row">
                   <a href={`/notes/${n.id}`} class="notes-row-link">
-                    <time datetime={n.data.pubDate.toISOString()}>
-                      {fmtDate(n.data.pubDate)}
-                    </time>
+                    <div class="notes-row-meta">
+                      <time datetime={n.data.pubDate.toISOString()}>
+                        {fmtDate(n.data.pubDate)}
+                      </time>
+                      {n.data.tags?.length > 0 && (
+                        <span class="notes-row-tags">
+                          {n.data.tags.join(' · ')}
+                        </span>
+                      )}
+                    </div>
                     <h2>{n.data.title}</h2>
                     {n.data.description && (
                       <p class="notes-row-desc">{n.data.description}</p>
                     )}
-                    <span class="notes-row-cta">
-                      Read note <span aria-hidden="true">→</span>
-                    </span>
+                    <span class="notes-row-arrow" aria-hidden="true">→</span>
                   </a>
                 </li>
               ))}
@@ -95,64 +100,94 @@ const fmtDate = (d: Date) =>
     list-style: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid var(--color-border);
   }
 
   .notes-row {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .notes-row:last-child {
     border-bottom: 1px solid var(--color-border);
   }
 
   .notes-row-link {
-    display: grid;
-    grid-template-columns: 140px 1fr 140px;
-    gap: 32px;
-    align-items: baseline;
-    padding-block: 32px;
+    display: block;
+    position: relative;
+    padding: 56px 64px 56px 0;
     text-decoration: none;
     color: inherit;
-    transition: background 0.2s;
+    transition: padding-left 0.3s ease;
   }
 
   .notes-row-link:hover {
-    background: var(--color-surface);
+    padding-left: 16px;
   }
 
-  .notes-row-link time {
+  .notes-row-meta {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    margin-bottom: 20px;
     font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .notes-row-meta time {
     color: var(--color-foreground-dim);
+  }
+
+  .notes-row-meta .notes-row-tags::before {
+    content: '·';
+    margin-right: 16px;
+    color: var(--color-foreground-muted);
   }
 
   .notes-row h2 {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 28px;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin: 0 0 8px;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0 0 16px;
+    max-width: 22ch;
+    transition: text-decoration-color 0.2s;
+  }
+
+  .notes-row-link:hover h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
   }
 
   .notes-row-desc {
-    font-size: 16px;
-    line-height: 1.5;
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.55;
     color: var(--color-foreground-soft);
-    max-width: 56ch;
+    max-width: 60ch;
+    margin: 0;
   }
 
-  .notes-row-cta {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-foreground-dim);
-    text-align: right;
-    transition: color 0.2s;
+  .notes-row-arrow {
+    position: absolute;
+    right: 0;
+    top: 56px;
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--color-foreground-muted);
+    transition:
+      color 0.2s,
+      transform 0.3s ease;
   }
 
-  .notes-row-link:hover .notes-row-cta {
+  .notes-row-link:hover .notes-row-arrow {
     color: var(--color-foreground);
+    transform: translateX(8px);
   }
 
   .empty {
@@ -161,16 +196,29 @@ const fmtDate = (d: Date) =>
   }
 
   @media (max-width: 760px) {
-    .notes-row-link {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      padding-block: 24px;
-    }
-    .notes-row-cta {
-      text-align: left;
-    }
     .notes-hero {
       padding-block: 64px 32px;
+    }
+
+    .notes-row-link {
+      padding: 40px 40px 40px 0;
+    }
+
+    .notes-row-link:hover {
+      padding-left: 0;
+    }
+
+    .notes-row-arrow {
+      top: 40px;
+      font-size: 22px;
+    }
+
+    .notes-row-meta {
+      margin-bottom: 14px;
+    }
+
+    .notes-row h2 {
+      max-width: none;
     }
   }
 </style>
