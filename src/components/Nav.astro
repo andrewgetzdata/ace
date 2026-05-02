@@ -6,14 +6,15 @@ interface Props {
   active?: string;
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const links = [
-  { href: '/#thesis', label: 'Thesis' },
-  { href: '/#how', label: 'How we plug in' },
-  { href: '/#who', label: "Who it's for" },
-  { href: '/#about', label: 'About' },
-  { href: '/#philosophy', label: 'Philosophy' },
-  { href: '/#tiers', label: 'Pricing' },
-  { href: '/notes', label: 'Notes' },
+  { href: `${base}/#thesis`, label: 'Thesis' },
+  { href: `${base}/#how`, label: 'How we plug in' },
+  { href: `${base}/#who`, label: "Who it's for" },
+  { href: `${base}/#about`, label: 'About' },
+  { href: `${base}/#philosophy`, label: 'Philosophy' },
+  { href: `${base}/#tiers`, label: 'Pricing' },
+  { href: `${base}/notes`, label: 'Notes' },
 ];
 ---
 
@@ -23,7 +24,7 @@ const links = [
     <nav class="nav-links" aria-label="Primary">
       {links.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>
-    <Button href="/#book" class="nav-cta">Book intro <span>→</span></Button>
+    <Button href={`${base}/#book`} class="nav-cta">Book intro <span>→</span></Button>
   </div>
 </header>
 

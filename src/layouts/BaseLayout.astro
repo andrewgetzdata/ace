@@ -9,12 +9,13 @@ interface Props {
 }
 
 const {
-  title = 'ACE — Judgment over tooling.',
+  title = 'ACE',
   description = 'An AI advisory practice for operator-led companies. Judgment from the outside, hands when you need them.',
   ogImage = '/og-image.jpg',
   noindex = false,
 } = Astro.props;
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImageURL = new URL(ogImage, Astro.site).toString();
 ---
@@ -31,8 +32,8 @@ const ogImageURL = new URL(ogImage, Astro.site).toString();
     <link rel="canonical" href={canonicalURL} />
     {noindex && <meta name="robots" content="noindex" />}
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
-    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=4" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg?v=4`} />
+    <link rel="alternate icon" type="image/x-icon" href={`${base}/favicon.ico?v=4`} />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

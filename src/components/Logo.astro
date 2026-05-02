@@ -9,7 +9,7 @@ interface Props {
 const {
   variant = 'full',
   size = 22,
-  href = '/',
+  href = import.meta.env.BASE_URL || '/',
   class: className = '',
 } = Astro.props;
 

@@ -26,6 +26,8 @@ const fmtDate = (d: Date) =>
     month: 'long',
     day: 'numeric',
   });
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout
@@ -39,7 +41,7 @@ const fmtDate = (d: Date) =>
       <div class="container-page note-inner">
         <header class="note-head">
           <p class="eyebrow">
-            <a href="/notes">Notes</a>
+            <a href={`${base}/notes`}>Notes</a>
             <span class="note-head-sep" aria-hidden="true">·</span>
             <time datetime={note.data.pubDate.toISOString()}>
               {fmtDate(note.data.pubDate)}
@@ -69,7 +71,7 @@ const fmtDate = (d: Date) =>
         <footer class="note-foot">
           <div class="note-foot-inner">
             <span class="eyebrow">Read another</span>
-            <Button href="/notes" variant="ghost">All notes →</Button>
+            <Button href={`${base}/notes`} variant="ghost">All notes →</Button>
           </div>
         </footer>
       </div>

@@ -2,6 +2,7 @@
 import Logo from './Logo.astro';
 
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer class="footer">
@@ -13,18 +14,18 @@ const year = new Date().getFullYear();
     <div class="footer-cols">
       <div class="footer-col">
         <span class="footer-label">Site</span>
-        <a href="/#thesis">Thesis</a>
-        <a href="/#how">How we plug in</a>
-        <a href="/#who">Who it's for</a>
-        <a href="/#about">About</a>
-        <a href="/#philosophy">Philosophy</a>
-        <a href="/#tiers">Pricing</a>
-        <a href="/notes">Notes</a>
+        <a href={`${base}/#thesis`}>Thesis</a>
+        <a href={`${base}/#how`}>How we plug in</a>
+        <a href={`${base}/#who`}>Who it's for</a>
+        <a href={`${base}/#about`}>About</a>
+        <a href={`${base}/#philosophy`}>Philosophy</a>
+        <a href={`${base}/#tiers`}>Pricing</a>
+        <a href={`${base}/notes`}>Notes</a>
       </div>
       <div class="footer-col">
         <span class="footer-label">Contact</span>
         <a href="mailto:hello@ace.example">hello@ace.example</a>
-        <a href="/#book">Book an intro</a>
+        <a href={`${base}/#book`}>Book an intro</a>
       </div>
       <div class="footer-col">
         <span class="footer-label">Office</span>
