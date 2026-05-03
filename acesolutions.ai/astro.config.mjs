@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://andrewgetzdata.github.io',
-  base: '/ace-website',
+  base: '/ace',
   integrations: [sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],
