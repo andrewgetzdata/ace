@@ -24,16 +24,19 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: acesolutions.ai/package-lock.json
 
       - run: npm ci
+        working-directory: acesolutions.ai
 
       - run: npm run build
+        working-directory: acesolutions.ai
 
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: acesolutions.ai/dist
 
   deploy:
     needs: build
