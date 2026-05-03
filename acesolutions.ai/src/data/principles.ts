@@ -62,18 +62,6 @@ export const principles: Principle[] = [
   },
   {
     n: '10',
-    title: 'Cut out the middleman',
-    body: 'Talk and work directly with the people doing the work. We do not believe in middle managers whose primary job is to manage. Direct communication enables speed and clarity.',
-    credit: 'Elon Musk',
-  },
-  {
-    n: '11',
-    title: 'Founder mode',
-    body: 'The Company is built around the unique strengths of our founders. This allows high speed and quality of output. Our culture of truth-seeking and intellectual honesty allows us to operate with high trust when acting quickly.',
-    credit: 'Brian Chesky',
-  },
-  {
-    n: '12',
     title: 'EV > TV > MeV',
     body: "Solve for the company value (enterprise value, EV) over your team's value (TV), over your own value. Always do the right thing for the company as a whole, not just for your team.",
     credit: 'Brian Halligan',
