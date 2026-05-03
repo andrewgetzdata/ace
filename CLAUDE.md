@@ -54,14 +54,11 @@ Source of truth for ACE Solutions strategy, positioning, and operations. Mirrore
 
 - **[`docs/discovery-session.md`](./docs/discovery-session.md)** — full template for paid Discovery engagements. Both the half-day Executive format and the full-day Operator format, including pre-meeting prep, agenda, workshop blocks, and follow-up structure. Use when scoping or running a Discovery with a prospect.
 
+- **[`docs/session-template.md`](./docs/session-template.md)** — template for ongoing client sessions across the three session types: Strategic (leadership-only, 90 min monthly), Execution (leadership + frontline, per-Rock cadence), and AI 101 (broad org, 75 min one-time). Each session opens with an "AI Level-Set" segment so vocabulary stays current. Use when running monthly or quarterly sessions with an active client.
+
+- **[`docs/ai-101-for-operators.md`](./docs/ai-101-for-operators.md)** — 75-minute literacy session for leadership teams or broad org training. Eight segments covering what AI is, where it works and doesn't, costs, security, vendor evaluation, and what to do next. Doubles as the embedded opener for any Strategic or Execution Session.
+
 - **[`docs/engagement-lifecycle-map.md`](./docs/engagement-lifecycle-map.md)** — the full client lifecycle from first contact through ongoing engagement. Five stages: 30-min Qualifying Call → 90-min Pitch Meeting → paid Discovery (Executive or Operator) → Tiered Engagement (Advise / Coach / Execute). Maps each ACE stage to its EOS equivalent. The high-level framing reference; the operational docs slot into specific stages.
-
-### Not yet mirrored
-
-These exist in Drive only as HTML exports (not native Google Docs), so they couldn't be pulled via the Drive API. Export from Drive as Markdown manually and add when ready:
-
-- **Session Template v3** — template for ongoing client sessions across the three session types (Strategic, Execution, AI 101). Each session opens with an "AI Level-Set" segment so vocabulary stays current.
-- **AI 101 for Operators v2** — 75-minute literacy session for leadership teams or broad org training. Eight segments covering what AI is, where it works and doesn't, costs, security, vendor evaluation, and what to do next.
 
 ### Archive
 
