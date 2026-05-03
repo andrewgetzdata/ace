@@ -3,6 +3,7 @@ title: 'What "judgment over tooling" actually means'
 description: 'Tools are commodity. Judgment is not. The gap between AI capability and AI judgment is where small and mid-sized businesses get hurt.'
 pubDate: 2026-04-15
 tags: ['thesis', 'judgment']
+modes: ['advise']
 ---
 
 The capability gap isn't tooling. Anyone with a credit card can buy access to a frontier model. The companies getting hurt aren't the ones using ChatGPT — they're the ones being sold an AI strategy by people who've never had to make payroll.

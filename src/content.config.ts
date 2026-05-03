@@ -9,6 +9,9 @@ const notes = defineCollection({
     pubDate: z.coerce.date(),
     draft: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
+    modes: z
+      .array(z.enum(['advise', 'coach', 'execute']))
+      .default([]),
   }),
 });
 

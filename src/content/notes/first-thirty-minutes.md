@@ -3,6 +3,7 @@ title: 'The questions we ask in the first 30 minutes'
 description: 'A working list of the questions we use to figure out whether an AI engagement is worth either side of the table starting.'
 pubDate: 2026-04-22
 tags: ['process', 'intake']
+modes: ['advise', 'coach']
 ---
 
 Most intro calls are a sales motion. Ours aren't. We've turned down a lot of work that wasn't a fit — for them, for us, or for both — and we've learned to figure that out fast.
