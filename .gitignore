@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Claude Code scheduler lock (local, not source)
+.claude/scheduled_tasks.lock
