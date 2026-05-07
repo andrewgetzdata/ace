@@ -128,12 +128,29 @@ import { principles } from '../data/principles';
   </Section>
 
   <Section id="who" eyebrow="Who it's for" number="03">
-    <h2>Operator-led companies between $5M and $250M.</h2>
+    <h2>Operator-led companies in the messy middle.</h2>
     <p class="lead mb-lead">
       You&apos;ve grown past the founder-as-everything stage. You haven&apos;t
       grown into the layer of process that lets AI initiatives die in
       committee. That window is where the leverage is.
     </p>
+    <ul class="signal-grid" aria-label="What we fix">
+      <li class="signal">
+        <span class="signal-from">Scattered AI bets</span>
+        <span class="signal-arrow" aria-hidden="true">→</span>
+        <span class="signal-to">A 30-day plan</span>
+      </li>
+      <li class="signal">
+        <span class="signal-from">Vendor pitch fatigue</span>
+        <span class="signal-arrow" aria-hidden="true">→</span>
+        <span class="signal-to">A trusted outside voice</span>
+      </li>
+      <li class="signal">
+        <span class="signal-from">Decks that gather dust</span>
+        <span class="signal-arrow" aria-hidden="true">→</span>
+        <span class="signal-to">Working AI in your tools</span>
+      </li>
+    </ul>
     <div class="who-grid">
       <article class="who-card">
         <span class="who-tag">Profile 01</span>
@@ -167,7 +184,7 @@ import { principles } from '../data/principles';
       <div class="filter-col filter-col--yes">
         <span class="filter-tag">This is for you if</span>
         <ul>
-          <li>You run an operator-led business between $5M and $250M.</li>
+          <li>You run an operator-led business in the messy middle.</li>
           <li>
             You&apos;ve felt the gap between AI capability and AI judgment.
           </li>
@@ -195,7 +212,24 @@ import { principles } from '../data/principles';
   </Section>
 
   <Section id="about" eyebrow="About" number="04">
-    <h2>An engineer, not a deck.</h2>
+    <h2>An engineer who ships. Not a consultant who decks.</h2>
+    <ul class="diff-strip" aria-label="What you get">
+      <li class="diff-chip">
+        <span class="diff-chip-num">01</span>
+        <span class="diff-chip-label">Judgment-led</span>
+        <span class="diff-chip-body">A trusted outside voice before a single tool is bought.</span>
+      </li>
+      <li class="diff-chip">
+        <span class="diff-chip-num">02</span>
+        <span class="diff-chip-label">Technical firepower</span>
+        <span class="diff-chip-body">Comfortable in the leadership room, the terminal, and the agent runtime.</span>
+      </li>
+      <li class="diff-chip">
+        <span class="diff-chip-num">03</span>
+        <span class="diff-chip-label">ROI-honest</span>
+        <span class="diff-chip-body">We&apos;ll walk away from work that won&apos;t earn its keep.</span>
+      </li>
+    </ul>
     <div class="about-grid">
       <div class="prose">
         <p>
@@ -602,6 +636,107 @@ import { principles } from '../data/principles';
     background: var(--color-foreground-dim);
     border-radius: 50%;
     flex-shrink: 0;
+  }
+
+  /* Signal arrows (problem → solution) ---------------------------- */
+  .signal-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .signal {
+    padding: 24px 28px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  .signal + .signal {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .signal-from {
+    color: var(--color-foreground-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  .signal-arrow {
+    color: var(--color-foreground-dim);
+  }
+
+  .signal-to {
+    color: var(--color-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  @media (max-width: 880px) {
+    .signal-grid {
+      grid-template-columns: 1fr;
+    }
+    .signal + .signal {
+      border-left: none;
+      border-top: 1px solid var(--color-border);
+    }
+  }
+
+  /* Differentiator chips (About) ---------------------------------- */
+  .diff-strip {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .diff-chip {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .diff-chip-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .diff-chip-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
+  }
+
+  .diff-chip-body {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--color-foreground-soft);
+  }
+
+  @media (max-width: 880px) {
+    .diff-strip {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Filter --------------------------------------------------------- */
