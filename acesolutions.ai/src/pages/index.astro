@@ -128,7 +128,7 @@ import { principles } from '../data/principles';
   </Section>
 
   <Section id="who" eyebrow="Who it's for" number="03">
-    <h2>Operator-led companies between $5M and $250M.</h2>
+    <h2>Operator-led companies in the messy middle.</h2>
     <p class="lead mb-lead">
       You&apos;ve grown past the founder-as-everything stage. You haven&apos;t
       grown into the layer of process that lets AI initiatives die in
@@ -167,7 +167,7 @@ import { principles } from '../data/principles';
       <div class="filter-col filter-col--yes">
         <span class="filter-tag">This is for you if</span>
         <ul>
-          <li>You run an operator-led business between $5M and $250M.</li>
+          <li>You run an operator-led business in the messy middle.</li>
           <li>
             You&apos;ve felt the gap between AI capability and AI judgment.
           </li>
@@ -195,7 +195,24 @@ import { principles } from '../data/principles';
   </Section>
 
   <Section id="about" eyebrow="About" number="04">
-    <h2>An engineer, not a deck.</h2>
+    <h2>An engineer who ships. Not a consultant who decks.</h2>
+    <ul class="diff-strip" aria-label="What you get">
+      <li class="diff-chip">
+        <span class="diff-chip-num">01</span>
+        <span class="diff-chip-label">Judgment-led</span>
+        <span class="diff-chip-body">A trusted outside voice before a single tool is bought.</span>
+      </li>
+      <li class="diff-chip">
+        <span class="diff-chip-num">02</span>
+        <span class="diff-chip-label">Technical firepower</span>
+        <span class="diff-chip-body">Comfortable in the leadership room, the terminal, and the agent runtime.</span>
+      </li>
+      <li class="diff-chip">
+        <span class="diff-chip-num">03</span>
+        <span class="diff-chip-label">ROI-honest</span>
+        <span class="diff-chip-body">We&apos;ll walk away from work that won&apos;t earn its keep.</span>
+      </li>
+    </ul>
     <div class="about-grid">
       <div class="prose">
         <p>
@@ -602,6 +619,53 @@ import { principles } from '../data/principles';
     background: var(--color-foreground-dim);
     border-radius: 50%;
     flex-shrink: 0;
+  }
+
+  /* Differentiator chips (About) ---------------------------------- */
+  .diff-strip {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .diff-chip {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .diff-chip-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .diff-chip-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
+  }
+
+  .diff-chip-body {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--color-foreground-soft);
+  }
+
+  @media (max-width: 880px) {
+    .diff-strip {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Filter --------------------------------------------------------- */
