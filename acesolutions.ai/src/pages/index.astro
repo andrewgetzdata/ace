@@ -134,23 +134,6 @@ import { principles } from '../data/principles';
       grown into the layer of process that lets AI initiatives die in
       committee. That window is where the leverage is.
     </p>
-    <ul class="signal-grid" aria-label="What we fix">
-      <li class="signal">
-        <span class="signal-from">Scattered AI bets</span>
-        <span class="signal-arrow" aria-hidden="true">→</span>
-        <span class="signal-to">A 30-day plan</span>
-      </li>
-      <li class="signal">
-        <span class="signal-from">Vendor pitch fatigue</span>
-        <span class="signal-arrow" aria-hidden="true">→</span>
-        <span class="signal-to">A trusted outside voice</span>
-      </li>
-      <li class="signal">
-        <span class="signal-from">Decks that gather dust</span>
-        <span class="signal-arrow" aria-hidden="true">→</span>
-        <span class="signal-to">Working AI in your tools</span>
-      </li>
-    </ul>
     <div class="who-grid">
       <article class="who-card">
         <span class="who-tag">Profile 01</span>
@@ -636,60 +619,6 @@ import { principles } from '../data/principles';
     background: var(--color-foreground-dim);
     border-radius: 50%;
     flex-shrink: 0;
-  }
-
-  /* Signal arrows (problem → solution) ---------------------------- */
-  .signal-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 56px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .signal {
-    padding: 24px 28px;
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    line-height: 1.4;
-  }
-
-  .signal + .signal {
-    border-left: 1px solid var(--color-border);
-  }
-
-  .signal-from {
-    color: var(--color-foreground-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-  }
-
-  .signal-arrow {
-    color: var(--color-foreground-dim);
-  }
-
-  .signal-to {
-    color: var(--color-foreground);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-  }
-
-  @media (max-width: 880px) {
-    .signal-grid {
-      grid-template-columns: 1fr;
-    }
-    .signal + .signal {
-      border-left: none;
-      border-top: 1px solid var(--color-border);
-    }
   }
 
   /* Differentiator chips (About) ---------------------------------- */
