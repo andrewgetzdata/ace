@@ -5,8 +5,8 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://andrewgetzdata.github.io',
-  base: '/ace',
+  site: 'https://acesolutions.ai',
+  base: '/',
   integrations: [sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],
