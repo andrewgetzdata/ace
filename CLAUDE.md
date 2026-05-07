@@ -23,7 +23,7 @@ This repo is a monorepo for ACE Solutions. Each top-level folder is a self-conta
   - `npm run dev` — local dev server
   - `npm run build` — static build into `dist/`
   - `npm run preview` — preview the built site
-- **Astro config**: `base: '/ace'`, `site: 'https://andrewgetzdata.github.io'`. Internal links use `import.meta.env.BASE_URL` so they resolve correctly under the `/ace/` subpath. When a custom domain (e.g. `acesolutions.ai`) is connected, set `base: '/'` and update `site`.
+- **Astro config**: `base: '/'`, `site: 'https://acesolutions.ai'`. Internal links use `import.meta.env.BASE_URL` so they continue to work if the base ever changes. The site is served from the apex `acesolutions.ai` via a custom domain (CNAME at `acesolutions.ai/public/CNAME`).
 
 ## Deployment
 
@@ -34,7 +34,7 @@ GitHub Pages deploys the website on every push to `main` via `.github/workflows/
 3. Runs `npm ci` and `npm run build` inside `acesolutions.ai/`
 4. Uploads `acesolutions.ai/dist` as the Pages artifact
 
-Live URL: `https://andrewgetzdata.github.io/ace/` (matches the repo name `ace`).
+Live URL: `https://acesolutions.ai` (custom domain via Cloudflare DNS → GitHub Pages). The legacy `https://andrewgetzdata.github.io/ace/` URL no longer serves content — the apex CNAME redirects there to the custom domain.
 
 ## Adding a new project
 
